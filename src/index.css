@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  margin-bottom: 60px;
+}
+
+button {
+    margin: 15px 0 15px 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
