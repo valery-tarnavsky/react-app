@@ -13,5 +13,37 @@ button {
 }
 
 form {
+    margin-top: 60px;
     margin-bottom: 20px;
+}
+
+.todo-list {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    list-style: none;
+}
+.todo-list__item {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #222222;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.todo-list__item i {
+    margin-left: 40px;
+    color: #CCC;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.todo-list__item i:hover {
+    margin-left: 40px;
+    color: #86D8BF;
+    cursor: pointer;
+}
+
+.todo-list__item--completed i{
+    color: #86D8BF;
 }
