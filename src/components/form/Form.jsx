@@ -7,9 +7,7 @@ function Form({ onSubmit, isRendered }) {
     }
     return (
         <form className="signup-form" onSubmit={onSubmit}>
-            <Input type="text" name="username" placeholder="username" />
-            <Input type="text" name="email" placeholder="Name" />
-            <Input type="password" name="password" placeholder="Password" />
+            <Input type="text" name="todoName" placeholder="todoName" />
             <button type="submit" className="form-btn">Sign up</button>
         </form>
     )

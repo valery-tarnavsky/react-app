@@ -29,6 +29,7 @@ form {
     line-height: 40px;
     color: #222222;
     border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
 }
 
 .todo-list__item i {
@@ -42,6 +43,11 @@ form {
     margin-left: 40px;
     color: #86D8BF;
     cursor: pointer;
+}
+
+.todo-list__item--completed{
+    color: #86D8BF;
+    text-decoration: line-through;
 }
 
 .todo-list__item--completed i{
