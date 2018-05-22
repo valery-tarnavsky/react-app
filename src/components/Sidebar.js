@@ -1,10 +1,27 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom"
+import { Link } from 'react-router-dom';
+import {addDeck, hideAddDeck, showAddDeck} from "../actions";
+import {connect} from "react-redux";
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        decks : state.decks,
+        addingDeck : state.addingDeck
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addDeck     : (name) => dispatch(addDeck(name)),
+        showAddDeck : () => dispatch(showAddDeck()),
+        hideAddDeck : () => dispatch(hideAddDeck())
+    }
+};
 
 class Sidebar extends Component {
     constructor(props){
         super(props);
-        console.log(props);
     }
 
     componentDidUpdate(){
@@ -20,16 +37,15 @@ class Sidebar extends Component {
     };
 
     render() {
-        console.log(this.props.addingDeck);
         return (
             <div className="sidebar">
                 <div className="decks">
                     <h2>All Decks</h2>
-                    <button onClick={e => this.props.showAddDeck()}>Add new deck</button>
+                    <button onClick={ e => this.props.showAddDeck()}>Add new deck</button>
                     <ul className="decks-list">
                         {
                             this.props.decks.map((deck, index) => {
-                                return <li className="decks-list__item" key={index}> {deck.name}</li>;
+                                return <li className="decks-list__item" key={index}><Link to={`/deck/${deck.id}`}>{deck.name}</Link></li>;
                             })
                         }
                     </ul>
@@ -40,4 +56,4 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
